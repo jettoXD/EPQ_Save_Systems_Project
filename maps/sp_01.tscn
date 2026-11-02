@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://6m5xqym4og1"]
+
+[ext_resource type="Shader" uid="uid://bk7iteg61hqdt" path="res://shaders/grid.gdshader" id="1_ou2hq"]
+[ext_resource type="PackedScene" uid="uid://cgq26ptbswc37" path="res://prefabs/player.tscn" id="2_6ip0j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ip0j"]
+sky_top_color = Color(0.916099, 0.32000077, 0.40117943, 1)
+sky_horizon_color = Color(0.8002924, 0.64351785, 0.6548125, 1)
+ground_horizon_color = Color(0.8002924, 0.64351785, 0.6548125, 1)
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_hlbe4"]
+sky_material = SubResource("ProceduralSkyMaterial_6ip0j")
+
+[sub_resource type="Environment" id="Environment_585uj"]
+background_mode = 2
+sky = SubResource("Sky_hlbe4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r81tb"]
+render_priority = 0
+shader = ExtResource("1_ou2hq")
+shader_parameter/bg_color = Color(0.15, 0.15, 0.15, 1)
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/grid_size = 1.0
+shader_parameter/line_thickness = 0.05
+
+[node name="Sp01" type="Node3D" unique_id=11394828]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1829249288]
+environment = SubResource("Environment_585uj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=235987429]
+transform = Transform3D(-0.8660254, -0.4285837, 0.25751907, 0, 0.5150381, 0.8571673, -0.50000006, 0.74232864, -0.44603604, 0, 0, 0)
+light_color = Color(1, 0.60784316, 0.6, 1)
+shadow_enabled = true
+
+[node name="Baseplate" type="CSGBox3D" parent="." unique_id=3958308]
+transform = Transform3D(0.6229778, 0, 0, 0, 0.6229778, 0, 0, 0, 0.6229778, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_r81tb")
+use_collision = true
+size = Vector3(512, 1, 512)
+
+[node name="Player" parent="." unique_id=624146296 instance=ExtResource("2_6ip0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29108977, 0)
