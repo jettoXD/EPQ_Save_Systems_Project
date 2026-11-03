@@ -8,3 +8,5 @@ By the end of this project, there will be:
 - A small game with different save systems and tracking of player analytics 
 - A report that examines and explains the data, and links the data to save systems 
 - A 10 minute presentation of the game and report
+
+Visual and audio assets are sourced from Kenney (https://kenney.nl). The project utilizes various 2D/3D environment and UI asset packs published under the CC0 1.0 Universal (Creative Commons Zero) public domain license.
