@@ -54,3 +54,17 @@ mesh = SubResource("ArrayMesh_inkap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-double/StaticBody3D" unique_id=2050891010]
 shape = SubResource("ConcavePolygonShape3D_x642t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1212547856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0151696, 0.27591604)
+light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
+light_energy = 3.0
+light_indirect_energy = 8.0
+light_size = 1.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1256888283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0151696, -0.2678972)
+light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
+light_energy = 3.0
+light_indirect_energy = 8.0
+light_size = 1.0

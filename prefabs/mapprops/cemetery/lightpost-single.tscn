@@ -54,3 +54,10 @@ mesh = SubResource("ArrayMesh_8fo81")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single/StaticBody3D" unique_id=315609129]
 shape = SubResource("ConcavePolygonShape3D_uta4d")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2111607477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.048065, 0.2590351)
+light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
+light_energy = 3.0
+light_indirect_energy = 8.0
+light_size = 1.0
