@@ -51,32 +51,57 @@ shadow_mesh = SubResource("ArrayMesh_va507")
 shape = SubResource("ConcavePolygonShape3D_2o4wl")
 
 [node name="lightpost-all" type="MeshInstance3D" parent="." unique_id=1185464150]
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_xqfdj")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=501589698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.031349, 0.25901634)
 light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
-light_energy = 3.0
-light_indirect_energy = 8.0
-light_size = 1.0
+light_energy = 1.5
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 2.0
+light_size = 5.0
+shadow_enabled = true
+shadow_bias = 0.5
+distance_fade_enabled = true
+omni_range = 15.0
+omni_attenuation = 0.5
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=8437277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.031349, -0.2565357)
 light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
-light_energy = 3.0
-light_indirect_energy = 8.0
-light_size = 1.0
+light_energy = 1.5
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 2.0
+light_size = 5.0
+shadow_enabled = true
+shadow_bias = 0.5
+distance_fade_enabled = true
+omni_range = 15.0
+omni_attenuation = 0.5
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2088255162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23073685, 1.031349, 0.003921449)
 light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
-light_energy = 3.0
-light_indirect_energy = 8.0
-light_size = 1.0
+light_energy = 1.5
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 2.0
+light_size = 5.0
+shadow_enabled = true
+shadow_bias = 0.5
+distance_fade_enabled = true
+omni_range = 15.0
+omni_attenuation = 0.5
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1917397703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25527516, 1.031349, 0.003921449)
 light_color = Color(0.4299786, 0.20283502, 0.15235868, 1)
-light_energy = 3.0
-light_indirect_energy = 8.0
-light_size = 1.0
+light_energy = 1.5
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 2.0
+light_size = 5.0
+shadow_enabled = true
+shadow_bias = 0.5
+distance_fade_enabled = true
+omni_range = 15.0
+omni_attenuation = 0.5
