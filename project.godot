@@ -120,3 +120,5 @@ common/physics_ticks_per_second=120
 
 rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
+lights_and_shadows/positional_shadow/atlas_size=2048
+lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv=3
