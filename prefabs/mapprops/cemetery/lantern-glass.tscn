@@ -53,7 +53,7 @@ points = PackedVector3Array(0.029122425, 0.00033966906, 0.11657383, -0.029141119
 
 [node name="lantern-glass2" type="RigidBody3D" unique_id=263071165]
 
-[node name="lantern-glass" type="MeshInstance3D" parent="." unique_id=1760853793]
+[node name="lantern-glass" type="MeshInstance3D" parent="." unique_id=1760853793 groups=["phys_prop"]]
 mesh = SubResource("ArrayMesh_dgamk")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1662867058]
