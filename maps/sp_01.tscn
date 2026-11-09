@@ -81,7 +81,7 @@ ambient_light_source = 3
 fog_enabled = true
 fog_light_color = Color(0.55642295, 0.1845356, 0.21108168, 1)
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
+volumetric_fog_density = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlbe4"]
 albedo_color = Color(0, 0, 0, 1)
@@ -91,6 +91,14 @@ albedo_color = Color(0.60784316, 0.4627451, 0.3254902, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmxkw"]
 albedo_color = Color(0.8870824, 0.7710483, 0.6674224, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r81tb"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="FogMaterial" id="FogMaterial_bmxkw"]
+density = 64.0
 
 [node name="Sp01" type="Node3D" unique_id=11394828]
 
@@ -143,9 +151,9 @@ size = Vector3(500, 16.478, 305.059)
 [node name="Paths" type="Node3D" parent="." unique_id=274047640]
 
 [node name="path" type="CSGBox3D" parent="Paths" unique_id=573323984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1367259, 15.065078, 152.5787)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1367259, 15.065078, 80.43863)
 material_override = SubResource("StandardMaterial3D_bmxkw")
-size = Vector3(3.9665527, 1, 57)
+size = Vector3(3.9665527, 1, 201.28015)
 
 [node name="path2" type="CSGBox3D" parent="Paths" unique_id=1408659734]
 transform = Transform3D(0.9339048, 0, 0.3575217, 0, 1, 0, -0.3575217, 0, 0.9339048, -8.121937, 15.065078, 147.01932)
@@ -1166,7 +1174,7 @@ transform = Transform3D(1.3145206, 0.31904227, -1.473176, -0.3093719, 1.970178, 
 collision_layer = 5
 
 [node name="contact_delete" parent="GraveyardSet1" unique_id=186947440 node_paths=PackedStringArray("objects_to_delete") instance=ExtResource("16_sq774")]
-transform = Transform3D(1.8709935, 0, -1.4329796, 0, 0.7139785, 0, 0.78961146, 0, 3.3954618, 39.069206, 15.60203, 118.725105)
+transform = Transform3D(1.4899436, 0, -1.4329796, 0, 0.7139785, 0, 0.62879777, 0, 3.3954618, 39.069206, 15.520678, 118.725105)
 target_group_name = "ShovelClass"
 objects_to_delete = [NodePath("../../secretbrickdoor"), NodePath("../theDigged")]
 is_visible = false
@@ -2331,7 +2339,7 @@ transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -15.719349, 15.599865, 
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 7.7607384, 15.599865, 97.93885)
 
 [node name="pine-fall14" parent="Trees" unique_id=1864656273 instance=ExtResource("19_70xlx")]
-transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 1.1166439, 15.599865, 107.25599)
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 4.599394, 15.599865, 107.25599)
 
 [node name="pine-fall15" parent="Trees" unique_id=1822932306 instance=ExtResource("19_70xlx")]
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 129.84213)
@@ -2384,6 +2392,96 @@ transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 
 [node name="pine-fall16" parent="Trees2" unique_id=564841158 instance=ExtResource("19_70xlx")]
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 129.84213)
 
+[node name="Trees4" type="Node3D" parent="." unique_id=332656431]
+transform = Transform3D(-0.8016177, 0, 0.59783703, 0, 1, 0, -0.59783703, 0, -0.8016177, -87.9305, 1.5258789e-05, 56.965904)
+
+[node name="pine-fall4" parent="Trees4" unique_id=1821415565 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -31.562113, 15.599865, 155.8802)
+
+[node name="pine-fall7" parent="Trees4" unique_id=419181369 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -30.878517, 15.599865, 148.39615)
+
+[node name="pine-fall17" parent="Trees4" unique_id=617875566 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -46.210064, 15.599865, 157.87825)
+
+[node name="pine-fall19" parent="Trees4" unique_id=162811797 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -44.047062, 15.599865, 144.5742)
+
+[node name="pine-fall20" parent="Trees4" unique_id=1075679112 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -49.076313, 15.599865, 128.10722)
+
+[node name="pine-fall8" parent="Trees4" unique_id=1829535427 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -26.186424, 15.599865, 132.96948)
+
+[node name="pine-fall9" parent="Trees4" unique_id=2039524341 instance=ExtResource("19_70xlx")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -35.422493, 15.599865, 134.63037)
+
+[node name="pine-fall10" parent="Trees4" unique_id=429053502 instance=ExtResource("19_70xlx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -34.92882, 15.599865, 128.3312)
+
+[node name="pine-fall11" parent="Trees4" unique_id=887379611 instance=ExtResource("19_70xlx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -36.701275, 15.599865, 113.15285)
+
+[node name="pine-fall12" parent="Trees4" unique_id=788689731 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -15.719349, 15.599865, 98.63278)
+
+[node name="pine-fall13" parent="Trees4" unique_id=1772614035 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 7.7607384, 15.599865, 97.93885)
+
+[node name="pine-fall14" parent="Trees4" unique_id=1473459544 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 1.1166439, 15.599865, 107.25599)
+
+[node name="pine-fall15" parent="Trees4" unique_id=1022243223 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 129.84213)
+
+[node name="pine-fall16" parent="Trees4" unique_id=654215217 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 129.84213)
+
+[node name="Trees3" type="Node3D" parent="." unique_id=2035828631]
+transform = Transform3D(-0.588793, 0, 0.80828387, 0, 1, 0, -0.80828387, 0, -0.588793, -117.16806, 1.5258789e-05, 66.87025)
+
+[node name="pine-fall4" parent="Trees3" unique_id=654170323 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -31.562113, 15.599865, 155.8802)
+
+[node name="pine-fall7" parent="Trees3" unique_id=330912360 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -30.878517, 15.599865, 148.39615)
+
+[node name="pine-fall17" parent="Trees3" unique_id=1587586996 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -46.210064, 15.599865, 157.87825)
+
+[node name="pine-fall19" parent="Trees3" unique_id=259265119 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -44.047062, 15.599865, 144.5742)
+
+[node name="pine-fall20" parent="Trees3" unique_id=155319744 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -49.076313, 15.599865, 128.10722)
+
+[node name="pine-fall8" parent="Trees3" unique_id=2084955064 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -26.186424, 15.599865, 132.96948)
+
+[node name="pine-fall9" parent="Trees3" unique_id=305305945 instance=ExtResource("19_70xlx")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -35.422493, 15.599865, 134.63037)
+
+[node name="pine-fall10" parent="Trees3" unique_id=257214329 instance=ExtResource("19_70xlx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -34.92882, 15.599865, 128.3312)
+
+[node name="pine-fall11" parent="Trees3" unique_id=421126889 instance=ExtResource("19_70xlx")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -36.701275, 15.599865, 109.15993)
+
+[node name="pine-fall12" parent="Trees3" unique_id=1474961786 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -15.719349, 15.599865, 98.63278)
+
+[node name="pine-fall13" parent="Trees3" unique_id=601519147 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 7.7607384, 15.599865, 97.93885)
+
+[node name="pine-fall14" parent="Trees3" unique_id=753715492 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 1.1166439, 15.599865, 107.25599)
+
+[node name="pine-fall15" parent="Trees3" unique_id=76240673 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 129.84213)
+
+[node name="pine-fall16" parent="Trees3" unique_id=265705611 instance=ExtResource("19_70xlx")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -6.4302754, 15.599865, 129.84213)
+
 [node name="trunk2" parent="." unique_id=732672730 instance=ExtResource("20_ap2bf")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.058628, 15.501938, 142)
 
@@ -2413,5 +2511,46 @@ transform = Transform3D(1.2900016, 0, 2.1414707, 0, 2.5, 0, -2.1414707, 0, 1.290
 
 [node name="popup" parent="." unique_id=1601675201 instance=ExtResource("22_pfqav")]
 transform = Transform3D(1.6934811, 0, -1.2588706, 0, 1.9447093, 0, 0.4537669, 0, 4.698169, 38.962784, 16.341866, 130.6794)
-popup_text = "Take the shovel and dig [i]the[i] [b]grave[b]."
+popup_text = "Take the shovel and dig [i]the[/i] [b]grave[/b]. [color=#ADD8E6]Press E to pickup props.[/color]"
+is_visible = false
+
+[node name="gravehole" type="CSGBox3D" parent="." unique_id=97429294]
+transform = Transform3D(0.94205743, 0, -0.33545157, 0, 1, 0, 0.33545157, 0, 0.94205743, 38.987206, 15.207666, 118.98391)
+material_override = SubResource("StandardMaterial3D_r81tb")
+size = Vector3(1.0976257, 0.5932617, 2.8833008)
+
+[node name="FogVolume" type="FogVolume" parent="gravehole" unique_id=338485216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1126709, 0.121967316, 0.047790527)
+size = Vector3(1.0466309, 0.37012482, 3.0187988)
+material = SubResource("FogMaterial_bmxkw")
+
+[node name="popup" parent="gravehole" unique_id=253182072 instance=ExtResource("22_pfqav")]
+transform = Transform3D(0.9079563, 0, -0.10437481, 0, 0.46811944, 0, 0.039592087, 0, 2.3936036, -0.078088045, 0.22001174, 0.18820666)
+popup_text = "Something in the distance opened."
+is_visible = false
+
+[node name="popup2" parent="." unique_id=1188225489 instance=ExtResource("22_pfqav")]
+transform = Transform3D(125.8596, 0, 0, 0, 12.268115, 0, 0, 0, 1, -0.19360328, 25.338509, 55.357143)
+popup_text = "You're not a good person, you know that, right?"
+is_visible = false
+
+[node name="popup4" parent="." unique_id=1641952319 instance=ExtResource("22_pfqav")]
+transform = Transform3D(125.8596, 0, 0, 0, 12.268115, 0, 0, 0, 1, -0.19360328, 37.78438, 55.357143)
+popup_text = "Avoiding the first trigger is not changing what it said."
+is_visible = false
+
+[node name="popup5" parent="." unique_id=1255124693 instance=ExtResource("22_pfqav")]
+transform = Transform3D(125.8596, 0, 0, 0, 12.268115, 0, 0, 0, 1, -0.19360328, 50.31337, 55.357143)
+popup_text = "stop"
+is_visible = false
+
+[node name="popup3" parent="." unique_id=1416547797 instance=ExtResource("22_pfqav")]
+transform = Transform3D(4.1608915, 0, 0, 0, 4.839762, 0, 0, 0, 1, -0.034089565, 16.625029, 54.42284)
+popup_text = "A light would be useful. [color=#ADD8E6]Press E to pickup props. Press F for offhand.[/color]
+"
+is_visible = false
+
+[node name="popup6" parent="." unique_id=605398552 instance=ExtResource("22_pfqav")]
+transform = Transform3D(-4.9204116, 0, -1.3756822, 0, 4.854533, 0, 1.5972137, 0, -4.237957, -19.11777, 17.492023, 117.172295)
+popup_text = "[color=#ADD8E6]Press E to pickup props. Press F for offhand.[/color]"
 is_visible = false
