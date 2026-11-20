@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://dentwmuejpm88" path="res://prefabs/mapprops/cemetery/trunk.tscn" id="20_ap2bf"]
 [ext_resource type="PackedScene" uid="uid://bqdloxspwgjib" path="res://prefabs/mapprops/cemetery/hay-bale-bundled.tscn" id="21_l5imo"]
 [ext_resource type="PackedScene" uid="uid://bew8m5yvm5hnf" path="res://prefabs/triggers/popup.tscn" id="22_pfqav"]
+[ext_resource type="PackedScene" uid="uid://dkfryncwjd60y" path="res://prefabs/universaleffects/superbasicfire.tscn" id="24_c65lm"]
+[ext_resource type="PackedScene" uid="uid://con0he4lb8s5i" path="res://prefabs/mapprops/cemetery/gravestone-broken.tscn" id="24_rrgtw"]
 
 [sub_resource type="Animation" id="Animation_pfqav"]
 length = 0.001
@@ -81,7 +83,7 @@ ambient_light_source = 3
 fog_enabled = true
 fog_light_color = Color(0.55642295, 0.1845356, 0.21108168, 1)
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+volumetric_fog_ambient_inject = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlbe4"]
 albedo_color = Color(0, 0, 0, 1)
@@ -99,6 +101,63 @@ metallic_specular = 1.0
 
 [sub_resource type="FogMaterial" id="FogMaterial_bmxkw"]
 density = 64.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_easw4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c65lm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rrgtw"]
+width = 4096
+height = 4096
+noise = SubResource("FastNoiseLite_c65lm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq774"]
+albedo_color = Color(0.26111263, 0.26111263, 0.2611126, 1)
+metallic = 0.2
+metallic_specular = 1.0
+metallic_texture = SubResource("NoiseTexture2D_easw4")
+roughness_texture = SubResource("NoiseTexture2D_rrgtw")
+
+[sub_resource type="Curve" id="Curve_rrgtw"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_c65lm"]
+curve = SubResource("Curve_rrgtw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rrgtw"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -19.99999
+angle_max = 20.000011
+angle_curve = SubResource("CurveTexture_c65lm")
+angular_velocity_min = -1.0000161
+angular_velocity_max = 0.9999839
+orbit_velocity_min = -0.19399992
+orbit_velocity_max = 0.29600012
+radial_velocity_min = -1.0000223
+radial_velocity_max = 0.99997765
+linear_accel_min = -12.760002
+linear_accel_max = 9.179997
+radial_accel_min = -5.610002
+radial_accel_max = 6.1199975
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+turbulence_noise_speed_random = 2.0
+turbulence_influence_max = 0.386
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hip6n"]
+transparency = 1
+albedo_color = Color(0.7411765, 0, 0, 0.5882353)
+metallic = 0.1
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.84705883, 0.44313726, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_04h0v"]
+material = SubResource("StandardMaterial3D_hip6n")
 
 [node name="Sp01" type="Node3D" unique_id=11394828]
 
@@ -2554,3 +2613,69 @@ is_visible = false
 transform = Transform3D(-4.9204116, 0, -1.3756822, 0, 4.854533, 0, 1.5972137, 0, -4.237957, -19.11777, 17.492023, 117.172295)
 popup_text = "[color=#ADD8E6]Press E to pickup props. Press F for offhand.[/color]"
 is_visible = false
+
+[node name="Tower" type="CSGBox3D" parent="." unique_id=78177894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50546026, 46.785805, -28.751915)
+material_override = SubResource("StandardMaterial3D_sq774")
+use_collision = true
+size = Vector3(20, 64.971664, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Tower" unique_id=704827183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.118898, -30.95306, 12.051569)
+size = Vector3(5.420044, 1, 4.1378174)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Tower" unique_id=1577641762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7786808, -29.784042, 12.051569)
+size = Vector3(2.40094, 0.34521484, 4.1378174)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Tower" unique_id=1272773245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5630352, -29.260859, 12.051569)
+size = Vector3(2.40094, 0.34521484, 4.1378174)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Tower" unique_id=1113281086]
+transform = Transform3D(0.87829906, -0.4781117, 0, 0.4781117, 0.87829906, 0, 0, 0, 1, 5.6359954, -28.737886, 12.051569)
+size = Vector3(2.40094, 0.34521484, 4.1378174)
+
+[node name="crypt-large2" parent="." unique_id=1877124865 instance=ExtResource("3_585uj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.2604909, 79, -32.496277)
+
+[node name="fire-superbasicbecuzimnotmakingawholeprefabforthat" type="GPUParticles3D" parent="crypt-large2" unique_id=834163259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.557904, 0.070545964, -0.6450561)
+amount = 32
+lifetime = 2.0
+fixed_fps = 15
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_rrgtw")
+draw_pass_1 = SubResource("PrismMesh_04h0v")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="crypt-large2/fire-superbasicbecuzimnotmakingawholeprefabforthat" unique_id=1579328327]
+light_color = Color(1.353256, 0.43718946, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 200.0
+distance_fade_length = 100.0
+omni_range = 4096.0
+
+[node name="fire-superbasicbecuzimnotmakingawholeprefabforthat3" parent="crypt-large2" unique_id=1110220988 instance=ExtResource("24_c65lm")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.5516907, 0.5612596, 0.24232519)
+
+[node name="Generaldamage" parent="crypt-large2" unique_id=1459025819 instance=ExtResource("3_hlbe4")]
+transform = Transform3D(0.94227254, 0, 0, 0, 0.9587688, 0, 0, 0, 1.9544133, -0.23335531, 0.4304245, -0.001496166)
+damage_amount = 3.0
+damage_interval_seconds = 0.6
+is_visible = false
+
+[node name="noteforself add planks" type="Node3D" parent="crypt-large2" unique_id=18830586]
+
+[node name="crypt-large-roof2" parent="." unique_id=950068235 instance=ExtResource("4_585uj")]
+transform = Transform3D(3.2561252, 3.50278, 1.4588301, -3.1966166, 3.5679874, -1.4321687, -2.0443323, 7.809904e-08, 4.5629716, 0.4967112, 80.772736, -33.21384)
+
+[node name="gravestone-broken2" parent="." unique_id=655779872 instance=ExtResource("24_rrgtw")]
+transform = Transform3D(1.504182, 0, 1.3181186, 0, 2, 0, -1.3181186, 0, 1.504182, -5.7705007, 79.27164, -26.41222)
